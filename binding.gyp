@@ -7,9 +7,10 @@
       ],
       'libraries': [
         '-ldivsufsort',
-        '-L/usr/lib',
-        '-L/usr/local/lib'
       ],
+      "include_dirs" : [
+        "<!(node -e \"require('nan')\")"
+      ]
     }
   ]
 }
