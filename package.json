@@ -12,6 +12,7 @@
   },
   "keywords": [
     "divsufsort",
+    "libdivsufsort",
     "suffix",
     "array",
     "burrows",
