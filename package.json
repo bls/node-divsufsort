@@ -1,0 +1,27 @@
+{
+  "name": "node-divsufsort",
+  "version": "0.0.1",
+  "description": "Node.js bindings for libdivsufsort.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bls/node-divsufsort.git"
+  },
+  "keywords": [
+    "divsufsort",
+    "suffix",
+    "array",
+    "burrows",
+    "wheeler",
+    "bwt"
+  ],
+  "author": "bls <blair.strang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bls/node-divsufsort/issues"
+  },
+  "homepage": "https://github.com/bls/node-divsufsort#readme"
+}
