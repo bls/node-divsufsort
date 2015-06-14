@@ -1,5 +1,5 @@
 {
-  "name": "node-divsufsort",
+  "name": "divsufsort",
   "version": "0.0.1",
   "description": "Node.js bindings for libdivsufsort.",
   "main": "index.js",

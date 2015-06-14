@@ -33,14 +33,13 @@ NAN_METHOD(divsufsort_) {
   }
   Local<Value> arg0 = args[0];
   Local<Value> arg1 = args[1];
+
   if(!Buffer::HasInstance(arg0)) {
-    return NanThrowTypeError("First argument should be Buffer");
+    return NanThrowTypeError("First argument must be a Buffer");
   }
   if(!Buffer::HasInstance(arg1)) {
-    return NanThrowTypeError("Second argument should be Buffer");
+    return NanThrowTypeError("Second argument must be a Buffer");
   }
-
-  // TODO: check that the two input buffers are, in fact, different!
 
   Handle<Object> tObj = arg0->ToObject();
   Handle<Object> saObj = arg1->ToObject();
@@ -59,8 +58,10 @@ NAN_METHOD(divsufsort_) {
   saidx_t *SA = reinterpret_cast<saidx_t *>(Buffer::Data(saObj));
 
   saint_t ret = divsufsort(T, SA, tLen);
-
-  NanReturnValue(NanNew<Number>(ret));
+  if(ret < 0) {
+    return NanThrowError("Suffix array construction failed");
+  }
+  NanReturnValue(NanNew<Number>(0));
 }
 
 
