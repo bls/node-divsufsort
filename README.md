@@ -1,5 +1,5 @@
 # divsufsort
-node.js bindings for libdivsufsort
+node binding for libdivsufsort.
 
 This is a thin wrapper around libdivsufsort by Yuta Mora. 
 
@@ -23,7 +23,7 @@ var sa = new Buffer(4 * t.length);  // Must be >= 4x input length
 // "sa" receives the suffix array, packed as 32-bit integers.
 divsufsort(t, sa);
 
-assert.deepEqual(sa, [10, 7, 0, 3, 5, 8, 1, 4, 6, 9, 2]);
+assert.deepEqual(bufToUint32Array(sa), [10, 7, 0, 3, 5, 8, 1, 4, 6, 9, 2]);
 
 /*
   Burroughs-Wheeler transform
