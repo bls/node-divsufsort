@@ -1,7 +1,9 @@
-# node-divsufsort
+# divsufsort
 node.js bindings for libdivsufsort
 
 This is a thin wrapper around libdivsufsort by Yuta Mora. 
+
+See: https://github.com/y-256/libdivsufsort
 
 ## Usage
 
@@ -55,7 +57,7 @@ npm install divsufsort
 brew install homebrew/science/libdivsufsort
 ```
 
-### libdivsufsort for General Linux / UNIX
+### libdivsufsort for Linux / Unix
 
 * Requires cmake >= 2.4.2, make, C compiler.
 
