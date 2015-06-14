@@ -13,10 +13,12 @@
   "keywords": [
     "divsufsort",
     "libdivsufsort",
+    "suffix-array",
     "suffix",
     "array",
     "burrows",
     "wheeler",
+    "burrows-wheeler",
     "bwt"
   ],
   "author": "bls <blair.strang@gmail.com>",
