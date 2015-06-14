@@ -4,6 +4,13 @@ var _ = require('lodash');
 var divsufsort = require('../index.js').divsufsort,
     divbwt = require('../index.js').divbwt;
 
+function bufToUin32Array(buf) {
+    var offsets = _.range(0, buf.length, 4);
+    return _.map(offsets, function (idx) {
+        return sa.readUInt32LE(idx);
+    });
+}
+
 describe('native', function() {
     describe('module', function() {
         it('should export the right functions', function() {
@@ -74,11 +81,7 @@ describe('native', function() {
                 sa = new Buffer(4 * t.length);
             var ret = divsufsort(t, sa);
             expect(ret).to.be.equal(0);
-            var offsets = _.range(0, sa.length, 4),
-                output = _.map(offsets, function (idx) {
-                    return sa.readUInt32LE(idx);
-                });
-            expect(output).to.be.eql([
+            expect(bufToUin32Array(sa)).to.be.eql([
                 10, 7, 0, 3, 5, 8, 1, 4, 6, 9, 2
             ]);
         });
