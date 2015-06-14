@@ -1,7 +1,9 @@
 # divsufsort
-node binding for libdivsufsort.
+node binding for Yuta Mori's libdivsufsort
 
-This is a thin wrapper around libdivsufsort by Yuta Mora. 
+> This library provides a simple and an efficient C API to construct a suffix array and a Burrows-Wheeler 
+> transformed string from a given string over a constant-size alphabet. The algorithm runs in O(n log n) 
+> worst-case time using only 5n+O(1) bytes of memory space, where n is the length of the string.
 
 See: https://github.com/y-256/libdivsufsort
 
@@ -17,12 +19,12 @@ var lodash = require('lodash'),
 /*
   Suffix array construction
  */
-var t = new Buffer('abracadabra'); 
-var sa = new Buffer(4 * t.length);  // Must be >= 4x input length
+var t = new Buffer('abracadabra'), 
+    sa = new Buffer(4 * t.length);  // Must be >= 4x input length
 
-// "sa" receives the suffix array, packed as 32-bit integers.
-divsufsort(t, sa);
-
+// "sa" receives the suffix array, packed as 32-bit integers. The function
+// will throw an Error if anything goes wrong.
+divsufsort(t, /* out */ sa);
 assert.deepEqual(bufToUint32Array(sa), [10, 7, 0, 3, 5, 8, 1, 4, 6, 9, 2]);
 
 /*
