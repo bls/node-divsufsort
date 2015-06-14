@@ -37,17 +37,18 @@ var t = new Buffer('banana'),
 // "u" receives the BWT transformed version of "t". "aux" is temporary storage.
 // Returns the primary index (index of original first char in t). Will throw if 
 // anything goes wrong.
-var ret = divbwt(t, /* out */ u, aux);
+var idx = divbwt(t, /* out */ u, /* tmp */ aux);
 var us = u.toString(),
-    result = us.slice(0, ret) + '$' + us.slice(ret);
+    result = us.slice(0, idx) + '$' + us.slice(idx);
 assert.equal(result, 'annb$aa');
 
 /* For testing */
 function bufToUint32Array(buf) {
-    var offsets = _.range(0, buf.length, 4);
-    return _.map(offsets, function (idx) {
-        return buf.readUInt32LE(idx);
-    });
+    var ret = [];
+    for(var i=0; i<buf.length; i+=4) {
+        ret.push(buf.readUint32LE(i));
+    }
+    return ret;
 }
 
 ```
