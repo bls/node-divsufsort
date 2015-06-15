@@ -126,7 +126,6 @@ describe('native', function() {
             var t = new Buffer('banana'),
                 u = new Buffer(t.length),
                 aux = new Buffer(4 * t.length);
-            console.log(t.length);
             var ret = divbwt(t, u, aux);
             var us = u.toString(),
                 result = us.slice(0, ret) + '$' + us.slice(ret);
