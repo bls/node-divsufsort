@@ -32,7 +32,7 @@ divsufsort(t, /* out */ sa);
 assert.deepEqual(bufToUint32Array(sa), [10, 7, 0, 3, 5, 8, 1, 4, 6, 9, 2]);
 
 /*
-  Burroughs-Wheeler transform
+  Burrows-Wheeler transform
  */
 var t = new Buffer('banana'),
     u = new Buffer(t.length),
