@@ -1,6 +1,6 @@
 {
   "name": "divsufsort",
-  "version": "0.2.0",
+  "version": "0.2.1-pre",
   "description": "Node.js bindings for libdivsufsort.",
   "main": "index.js",
   "scripts": {
