@@ -9,6 +9,7 @@ See: https://github.com/y-256/libdivsufsort
 
 CircleCI: ![CircleCI status](https://circleci.com/gh/bls/node-divsufsort.png?style=shield&circle-token=45d20bfe875bec3b9f9f4c0bd3a481832d8ae8af)
 Travis: [![Build Status](https://travis-ci.org/bls/node-divsufsort.svg?branch=master)](https://travis-ci.org/bls/node-divsufsort)
+Deps: ![Deps Status](https://david-dm.org/bls/node-divsufsort.svg)
 
 ## Usage
 
